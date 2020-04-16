@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="A demo site featuring an ajax-based stock widget that uses Python and Flask as a backend microservice API">
+    <meta name="author" content="Elton M">
+
+    <title>Python and Flask based Stock Widget - BDAT 1004 Group 7 </title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="{{ url_for('static',    filename='css/site.css') }}" rel="stylesheet">
+  </head>
+  <body class="text-center">
+    <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+        <header class="masthead mb-auto">
+          <div class="inner">
+            <h3 class="masthead-brand">All Data</h3>
+            <nav class="nav nav-masthead justify-content-center">
+              <a class="nav-link active" href="/">Home</a>
+              <nav>
+          </div>
+        </header><br><br/>
+            <div class="inner">
+                <div id="widgetContent">
+                <p>{{dump}}</p>
+                </div>
+            </div>
+    </div>
+        
+</body>
+</html>

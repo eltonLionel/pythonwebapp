@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="A demo site featuring an ajax-based stock widget that uses Python and Flask as a backend microservice API">
+    <meta name="author" content="Elton M">
+
+    <title>Python and Flask based Stock Widget - BDAT 1004 Group 7 </title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="{{ url_for('static',    filename='css/site.css') }}" rel="stylesheet">
+  </head><br></br>
+
+<body class="text-center">
+  <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+    <header class="masthead mb-auto">
+      <div class="inner">
+        <h2 class="masthead-brand">This is Live Cloud Page</h2>
+        <nav class="nav nav-masthead justify-content-center">
+          <a class="nav-link active" href="/">Home</a>
+          <nav>
+      </div><br><br/>
+    <div id="widgetContent">
+        <main role="main" class="inner">
+          <h3 class="cover-heading"> API to load data from MongoDB</h3 ><br><br/>
+          <div class="input-group mb-3">
+            <form method = "post" action = "{{url_for('allstock')}}">
+                <p class="lead">1. Get all Stocks (by symbols)</p>
+                <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="submit" >Get</button>
+                </div><br><br/>
+            </form>
+          </div> 
+          <div class="input-group mb-3">
+            <form method = "post" action = "{{url_for('alldata')}}">
+                <p class="lead">2. Get all Data</p>
+                 <div class="input-group-append">
+                 <button class="btn btn-outline-secondary" type="submit" >Get</button>
+                </div><br><br/>
+            </form>
+          </div>
+          <div class="input-group mb-3">
+            <form method = "post" action = "{{url_for('byid')}}">
+                <p class="lead">3. Get Stocks by column names</p>
+                  <div class="input-group-append"></div>
+                    <p>Enter Stock Symbol: <input type="text" id="sname" name="sname" value="Enter Stock ETF or Mutual Fund Symbol"></p>
+                    <p>Enter date: <input type="date" id="dname" name="dname"></p>
+                    <button class="btn btn-outline-secondary" type="submit" >Get</button>
+                  </div><br><br/>
+            </form>
+          </div>
+          
+          <div id="chart_container"></div>
+        </main>
+      </div><br><br/>
+  
+      <footer class="mastfoot mt-auto">
+        <div class="inner">
+          <p>This Demo Created by Group 7</a></p>
+        </div>
+      </footer>
+
+</body>
+</html>
